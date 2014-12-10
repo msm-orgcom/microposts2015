@@ -217,7 +217,7 @@ Giuseppe Rizzo, Eurecom, France
 Andrea Varga, The University of Sheffield, UK
 
 --------------------------------
-SPONSOR: SpazioDati ( http://www.spaziodati.eu/ )
+SPONSOR: SpazioDati ( http://www.spaziodati.eu )
 --------------------------------
 
 
