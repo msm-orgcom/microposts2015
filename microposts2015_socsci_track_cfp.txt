@@ -34,12 +34,30 @@ Social & Web Science Studies
 	- Political and polemical aspects of Microposts
 	- Ethics, legal and privacy issues
 	- Psychological profiles and psychological aspects of Micropost-based interactions
-	- Cultural, generational and regional differences in access and use	- Inequality in access and use of digital, social media
+	- Cultural, generational and regional differences in access and use
+	- Inequality in access and use of digital, social media
 
 
 Additionally, the topics below, detailed in the CfP for the main track, include topics of interest to the Social Sciences community, regarding obtaining understanding about, discovering knowledge content of, add application of Micropost data:
 
-	- Emergent semantics	- Data mining from Microposts	- Opinion mining, sentiment and sentic analysis	- Network analysis and community detection	- Influence detection and social contagion modelling	- Prediction approaches	- Linking Microposts into the Web of Linked Data (i.e. entity extraction and URI disambiguation)APPLICATIONS: 	- Collective intelligence, user profiling, personalisation & recommendation	- Business analytics & market intelligence	- Event & topic detection and tendency tracking	- Microposts as second screen to television	- Geo-localised, Micropost-based services	- Public consensus & citizen participation	- Security, emergency response & health	- Effortless posting and wearable devices on communication 	- Linking social and physical signals for, e.g., crowd tracking
+	- Emergent semantics
+	- Data mining from Microposts
+	- Opinion mining, sentiment and sentic analysis
+	- Network analysis and community detection
+	- Influence detection and social contagion modelling
+	- Prediction approaches
+	- Linking Microposts into the Web of Linked Data (i.e. entity extraction and URI disambiguation)
+
+APPLICATIONS: 
+	- Collective intelligence, user profiling, personalisation & recommendation
+	- Business analytics & market intelligence
+	- Event & topic detection and tendency tracking
+	- Microposts as second screen to television
+	- Geo-localised, Micropost-based services
+	- Public consensus & citizen participation
+	- Security, emergency response & health
+	- Effortless posting and wearable devices on communication 
+	- Linking social and physical signals for, e.g., crowd tracking
 
 
 
@@ -105,7 +123,8 @@ W3C Microposts Community Group: http://www.w3.org/community/microposts
 TRACK CHAIRS
 ---------------
 
-Danica Radovanović, University of Novi Sad, SerbiaKatrin Weller, GESIS, Germany
+Danica Radovanović, University of Novi Sad, Serbia
+Katrin Weller, GESIS, Germany
 
 
 Workshop Organisers
@@ -119,8 +138,9 @@ Aba-Sah Dadzie, University of Birmingham, UK
 Program Committee (to be completed)
 -----------------------------------------
 
-Athina Karatzogianni, University of Leicester, UK
 Fabio Giglietto, Università di Urbino Carlo Bo, Italy
+Simon Hegelich	Universität Siegen, Germany
+Athina Karatzogianni, University of Leicester, UK
 Luca Rossi, Università di Urbino Carlo Bo, Italy
 Saskia Vanmanen, The Open University, UK 
 Alistair Willis, The Open University, UK 
