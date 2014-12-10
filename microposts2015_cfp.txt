@@ -156,7 +156,7 @@ Program Committee
 
 Gholam R. Amin, Sultan Qaboos University, Oman
 Pierpaolo Basile, University of Bari, Italy
-Julie Birkholz, Vrije University, The Netherlands
+Julie Birkholz, CHEGG, Ghent University, Belgium
 John Breslin, NUIG, Ireland
 Amparo E. Cano, KMi, Open University, UK
 Marco Antonio Cassanova, PUC-Rio, Brazil
