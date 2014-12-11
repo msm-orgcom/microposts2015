@@ -156,7 +156,7 @@ Program Committee
 
 Gholam R. Amin, Sultan Qaboos University, Oman
 Pierpaolo Basile, University of Bari, Italy
-Julie Birkholz, Vrije University, The Netherlands
+Julie Birkholz, CHEGG, Ghent University, Belgium
 John Breslin, NUIG, Ireland
 Amparo E. Cano, KMi, Open University, UK
 Marco Antonio Cassanova, PUC-Rio, Brazil
@@ -199,8 +199,9 @@ Katrin Weller, GESIS, Germany
 Program Committee (to be completed)
 -----------------------------------------
 
-Athina Karatzogianni, University of Leicester, UK
 Fabio Giglietto, Università di Urbino Carlo Bo, Italy
+Simon Hegelich	Universität Siegen, Germany
+Athina Karatzogianni, University of Leicester, UK
 Luca Rossi, Università di Urbino Carlo Bo, Italy
 Saskia Vanmanen, The Open University, UK 
 Alistair Willis, The Open University, UK 
@@ -216,9 +217,11 @@ A. Elizabeth Cano, KMi, Open University, UK
 Giuseppe Rizzo, Eurecom, France
 Andrea Varga, The University of Sheffield, UK
 
---------------------------------
+--------------------------------------------------
 SPONSOR: SpazioDati ( http://www.spaziodati.eu )
---------------------------------
+
+Award: €1500 to highest ranking submission
+--------------------------------------------------
 
 
 Program Committee
