@@ -108,8 +108,8 @@
                                             <ul>
                                                 <li><a href="http://www.scc.lancs.ac.uk/microposts2014">#Microposts2014</a> @ WWW2014</li>
                                                 <li><a href="http://oak.dcs.shef.ac.uk/msm2013">&#35;MSM2013</a> @ WWW2013</li>
-                                                <li><!-- a href="http://socsem.open.ac.uk/msm2012"--><a href="http://ceur-ws.org/Vol-838">&#35;MSM2012</a> @ WWW2012</li>
-                                                <li><!-- a href="http://research.hypios.com/msm2011" --><a href="http://ceur-ws.org/Vol-718/">&#35;MSM2011</a> @ ESWC2011</li>
+                                                <li><a href="http://ceur-ws.org/Vol-838">&#35;MSM2012</a> @ WWW2012</li>
+                                                <li><a href="http://ceur-ws.org/Vol-718/">&#35;MSM2011</a> @ ESWC2011</li>
                                             </ul>
                                     <br />
                                     </li>
@@ -143,21 +143,21 @@
 						
 						<div class="section" id="dataset">						
                                     <h4><a name="dataset" id="dataset"></a>Dataset</h4>
-                                    <p>The dataset comprises tweets extracted from a collection of over 18 million tweets. The dataset includes event-annotated tweets provided by the Redites project (http://demeter.inf.ed.ac.uk/redites/) covering multiple noteworthy events from 2011, 2013  (including the death of Amy Winhehouse, the London Riots, the Oslo bombing and the Westgate Shopping Mall shootout) and tweets extracted from the Twitter firehose from 2014. Since the task of this challenge is to automatically recognise and link entities, we have built our dataset considering both event and non-event tweets. While event tweets are more likely to contain entities, non-event tweets enable us to evaluate the performance of the system in avoiding false positives in the entity extraction phase. The training set is built on top of the entire corpus of the NEEL 2014 Challenge. We have further extended it for typing the entities and adding the NIL references.
+                                    <p>The dataset comprises tweets extracted from a collection of over 18 million tweets. The dataset includes event-annotated tweets provided by the  <a href="http://demeter.inf.ed.ac.uk/redites/">Redites project</a> covering multiple noteworthy events from 2011, 2013  (including the death of Amy Winhehouse, the London Riots, the Oslo bombing and the Westgate Shopping Mall shootout) and tweets extracted from the Twitter firehose from 2014. Since the task of this challenge is to automatically recognise and link entities, we have built our dataset considering both event and non-event tweets. While event tweets are more likely to contain entities, non-event tweets enable us to evaluate the performance of the system in avoiding false positives in the entity extraction phase. The training set is built on top of the entire corpus of the NEEL 2014 Challenge. We have further extended it for typing the entities and adding the NIL references.
 
                                     </p>
 <p>
 Following the Twitter TOS we will only provide tweet IDs and annotations for the training set; and tweet IDs for the test set. We will also provide a common framework to mine these datasets from Twitter.  The training set will be released as tsv following the TAC KBP format, where each line consists of the following features:
 </p>
 <p>
-1st: tweet id
-2nd,3rd: start/end offsets expressed as the number of UTF8 characters starting from 0, aka the beginning of the tweet
-4th: link to DBpedia resource or NIL (it may exist different NIL in the dataset. Each NIL may be reused if there are several mentions in the text which express the same entity)
-5th:  score
-6th: type
+1st: tweet id</br>
+2nd,3rd: start/end offsets expressed as the number of UTF8 characters starting from 0, aka the beginning of the tweet</br>
+4th: link to DBpedia resource or NIL (it may exist different NIL in the dataset. Each NIL may be reused if there are several mentions in the text which express the same entity)</br>
+5th:  score</br>
+6th: type</br>
 </p>
 <p>
-Tokens are separated by TABs. Entity mentions and URIs are listed according to their appearance order in the tweet. We will timely advertise the release of the data sets on the workshop mailing list. Please subscribe to https://groups.google.com/d/forum/microposts2015. More information about dates are available in the NEEL website http://www.scc.lancs.ac.uk/microposts2015/challenge. 
+Tokens are separated by TABs. Entity mentions and URIs are listed according to their appearance order in the tweet. We will timely advertise the release of the data sets on the workshop mailing list. Please subscribe to the  <a href="https://groups.google.com/d/forum/microposts2015">Microposts2015 Google group</a>. 
 
 </p>
 
@@ -169,13 +169,13 @@ Tokens are separated by TABs. Entity mentions and URIs are listed according to t
                                     <h5>Evaluation</h5>
                                     <p>Participants are required to implement their systems as a publicly accessible web service following a REST based protocol (which will be advertised on the mailing list before the release of the training set) and submit their contending entries (up to 10) to a registry of the NEEL challenge services. Upon receiving the registration of the service, calls to the contending entry will be scheduled in two different time windows, namely D-Time (meant to test the APIs) and T-Time for the final evaluation and metric computations. In the final stage, each participant can submit up to 3 final contending entries. </p>
 <p>
-We will use the metrics proposed by TAC KBP 2014 (https://github.com/wikilinks/neleval/wiki/Evaluation) and in particular we will focus on: 
+We will use the metrics proposed by <a href="https://github.com/wikilinks/neleval/wiki/Evaluation">TAC KBP 2014</a> and in particular we will focus on: 
 </p>
 <p>
 
-[tagging]      strong_typed_mention_match (check entity name boundary and type)
-[linking]       strong_mention_match
-[clustering]  mention_ceaf (KB/NIL detection)
+[tagging]      strong_typed_mention_match (check entity name boundary and type)</br>
+[linking]       strong_mention_match</br>
+[clustering]  mention_ceaf (KB/NIL detection)</br>
 </p>
 <p>
 To ensure the correctness of the results and avoid any loss we will trigger N number of calls and we will statistically evaluate the metrics.
@@ -183,7 +183,7 @@ To ensure the correctness of the results and avoid any loss we will trigger N nu
 
   <h5>Submissions</h5>
 <p>
-A paper of 2 pages describing your approach, how you tuned/tested it using the training split, and your results. All submissions must be in English. All written submissions should be prepared according to the ACM SIG Proceedings Template (see http://www.acm.org/sigs/publications/proceedings-templates), and should include author names and affiliations, and 3-5 author-selected keywords. Where a submission includes additional material submission this should be made as a single, unencrypted zip file that includes a plain text file listing its contents.Submission is via EasyChair, at:  https://www.easychair.org/conferences/?conf=microposts2015.
+A paper of 2 pages describing your approach, how you tuned/tested it using the training split, and your results. All submissions must be in English. All written submissions should be prepared according to the <a href="http://www.acm.org/sigs/publications/proceedings-template">ACM SIG Proceedings Template</a>, and should include author names and affiliations, and 3-5 author-selected keywords. Where a submission includes additional material submission this should be made as a single, unencrypted zip file that includes a plain text file listing its contents.Submission is via EasyChair, at:  <a href="https://www.easychair.org/conferences/?conf=microposts2015">https://www.easychair.org/conferences/?conf=microposts2015</a>.
 </p>
 
 <p>Each submission will receive at least 2 peer reviews.</p>
@@ -197,7 +197,7 @@ The #Microposts2015 proceedings will be published as a single volume containing 
                                     
                                     
                                 <div class="section" id="dates">
-                                    <h4><a name="deadlines" id="deadlines"></a>Deadlines (further detail pending):</h4>
+                                    <h4><a name="deadlines" id="deadlines"></a>Deadlines (further details pending):</h4>
                                     <ul>
                                         <li>Intent to participate: 20 Jan  2015 (soft - further instructions will be shared on the mailing list)</li>
 <li>Release of the REST API specs: 2 Feb 2015</li>                                        
@@ -220,29 +220,12 @@ The #Microposts2015 proceedings will be published as a single volume containing 
                                   
                                  <div class="section" id="prize">
                                     
-									<p><img src="../images/blank_space.png" height=25></p>
                                     <h4>Prize</h4>
                                     <p>
-                                    A prize of &#8364; 1500, generously sponsored by <a href="http://spaziodati.eu" target="_blank">SpazioDati</a>, will be awarded to the highest ranking submission. SpazioDati is an Italian startup focused on text analytics and big data. One of SpazioDati's key components is <a href="https://dandelion.eu/products/datatxt"><b><i>dataTXT</i></b></a>, a text-analytics engine available on SpazioDati's' API platform, Dandelion. The <b><i>dataTXT</i></b> named-entity extraction system has been proven to be very effective and efficient on short and fragmented texts, like Microposts. By teaming up with SpazioDati to make the challenge possible, the &#35;Microposts workshop organisers wish to highlight new entity extraction methods and algorithms to pursue in such challenging scenarios.
+                                    A prize of &#8364;1500, generously sponsored by <a href="http://spaziodati.eu" target="_blank">SpazioDati</a>, will be awarded to the highest ranking submission. SpazioDati is an Italian startup focused on text analytics and big data. One of SpazioDati's key components is <a href="https://dandelion.eu/products/datatxt"><b><i>dataTXT</i></b></a>, a text-analytics engine available on SpazioDati's' API platform, Dandelion. The <b><i>dataTXT</i></b> named-entity extraction system has been proven to be very effective and efficient on short and fragmented texts, like Microposts. By teaming up with SpazioDati to make the challenge possible, the &#35;Microposts workshop organisers wish to highlight new entity extraction methods and algorithms to pursue in such challenging scenarios.
                                     </p>
-                                                                       
-                                    <p><img src="../images/blank_space.png" width=35></p>
-                                </div><!--prize-->
-
-                               
-                                    
-                                    <p><img src="../images/blank_space.png" height=25></p>  
-                                    
-                                    <div class="section">
-<ul>                                    
-<li>E-mail: microposts2014@easychair.org</li>
-<li>Google group : https://groups.google.com/forum/#!forum/microposts2015</li>
-<li>Twitter hashtag: #microposts2015challenge</li>
-<li>Twitter account: @Microposts2015</li>
-<li>W3C Microposts Community Group: http://www.w3.org/community/microposts</li>
-</ul>
-
-                                    </div>                                                                                                    
+                                                                                                     
+                                </div><!--prize-->                                                                                                
                                 
                                  <div class="section" id="challenge_committee">
                                     <h4>Challenge Chairs</h4>
@@ -279,50 +262,14 @@ Mischa Tuffield, PeerIndex<br />
 Victoria Uren, Aston University, UK<br />
 Gregoire Burel, Knowledge Media Institute, The Open University, UK<br />
 
-
+                                                                      
+                                    <p>&nbsp;<br /><a href="#top" class="style1">back to top</a> </p>                                    
+                                     <p>&nbsp;</p>
                                     
-                                    
-                                    <!-- <p><img src="images/blank_space.png" height=35></p> -->
-                                    <!-- p>Download the detailed challenge call <a href="cfp_ie_challenge_msm2013.txt">[text]</a> <a href="cfp_ie_challenge_msm2013.pdf">[PDF]</a></p -->
-                                    
-                                    <!-- p><a href="challenge_faq.html">FAQ</a></p -->
-                                    
-                                    <p>&nbsp;<br /><a href="#top" class="style1">back to top</a> </p>
-                                    
-                                    
+                                    <h4>Contact</h4>
                                     <p><a href="../contact.html">Contact</a> workshop organisers or challenge chair</p>
                                     
-                                    <!-- p>&nbsp;<br /><a href="#top" class="style1">back to top</a> </p -->
-                                    
-                                    <!-- <p><img src="../images/blank_space.png" height=125></p> -->
-                                </div>
-                                
-                                <!-- div class="section" id="challenge_supporters">
-                                     
-                                    <p>&nbsp;</p>
-                                    <h4>Industry Supporters</h4>
-                                    
-                                    <a href="http://otuslabs.com">Otus Labs Ltd, Sheffield, UK</a>  <br />
-                                    <a href="http://www.signal.uk.com">Signal, London, UK</a>  <br />
-                                    
-                                  <!--p>&nbsp;<br /><a href="#top" class="style1">back to top</a> </p>
-                                </div -->
-                                
-                                <div class="section" id="challenge_other">
-                                     
-                                     
-                                     <!-- <p><img src="images/blank_space.png" height=35></p> -->
-                                     <!-- p>Download the detailed challenge call <a href="cfp_ie_challenge_microposts2015.txt">[text]</a> <a href="cfp_ie_challenge_microposts2015.pdf">[PDF]</a></p -->
-                                     
-                                     <p><img src="../images/blank_space.png" height=15></p>
-                                     <p><a href="../contact.html">Contact</a> workshop organisers or challenge chairs</p>
-                                     
-                                     <!-- <p><img src="../images/blank_space.png" height=125></p> -->
-                                    
-                                </div>
-
-                                <!-- p><a href="#top" class="style1">back to top</a> </p-->
-                                                                
+                                </div>                                                              
                                 
                             </div><!-- end div - main -->
                             <!-- InstanceEndEditable -->
