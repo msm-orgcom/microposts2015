@@ -127,11 +127,12 @@
 
                                 <div class="sectionwithinset" id="introduction">
                                     <h3><a name="introduction" id="introduction"></a>Named Entity rEcognition and Linking (NEEL) Challenge</h3>
-                                    <p>Microposts are a highly popular medium to share facts, opinions or emotions. They are an invaluable wealth of data, ready to be mined for training predictive modellings. Following the success of the last year, we are pleased to announce the NEEL Challenge which will take place during the #Microposts2015 Workshop.</p>
+                                    <p>Microposts are a highly popular medium to share facts, opinions or emotions. They are an invaluable wealth of data, ready to be mined for training predictive modellings. Following the success of the last year, we are pleased to announce the NEEL challenge which will be part of  the #Microposts2015 Workshop at the World Wide Web 2015 conference.</p>
 
-<p>The overall task of the challenge is to automatically recognise entities and their types from English microposts, and to link them to the corresponding English DBpedia 2014 resources (if the linkage exists). As linking stage we aim to disambiguate expressions that are formed by discrete (and typically short) sequences of words.
-We organise this challenge to foster research into novel, more accurate solutions for the automatic entity recognition and linking in (much shorter) micropost data.</p>
-We will ask the participants to automatically extract entities (e.g., Obama, London, Rakuten) and recognise their types (e.g., Person, Location, Organisation) from a collection of microposts. Participants will have to automatically provide context-relevant DBpedia resources for each entity in a micropost or NIL references if the spotted named entity does not correspond to any resource in DBpedia..
+<p>The overall task of the challenge is to automatically recognise entities and their types from English microposts, and to link them to the corresponding English DBpedia 2014 resources (if the linkage exists). Participants will have to automatically extract expressions that are formed by discrete (and typically short) sequences of words (e.g., Obama, London, Rakuten) and recognise their types (e.g., Person, Location, Organisation) from a collection of microposts. As linking stage we aim to disambiguate the spotted entity to the corresponding DBpedia resource, or to a NIL reference if the spotted named entity does not match any resource in DBpedia. This year challenge will also evaluate the end-to-end performance of the system by measuring the computation time for analyzing the corpus using the submitted algorithms. </p>
+
+<p>We welcome and hope participants from NEEL, TREC, TAC, ERD shared tasks to participate in this year challenge.
+
 </p>
 
 									<h4>Award Sponsor:
@@ -142,16 +143,21 @@ We will ask the participants to automatically extract entities (e.g., Obama, Lon
 						
 						<div class="section" id="dataset">						
                                     <h4><a name="dataset" id="dataset"></a>Dataset</h4>
-                                    <p>The dataset comprises tweets extracted from a much larger collection of over 18 million tweets. The dataset includes tweets provided by the Redites project (http://demeter.inf.ed.ac.uk/redites/) covering event-annotated tweets. It extends over multiple noteworthy events from 2011, 2013, and 2014 including the death of Amy Winhehouse, the London Riots, the Oslo bombing and the Westgate Shopping Mall shootout. Since the task of this challenge is to automatically recognise and link entities, we have built our dataset considering both event and non-event tweets. While event tweets are more likely to contain entities, non-event tweets enable us to evaluate the performance of the system in avoiding false positives in the entity extraction phase.</p>
-<p>The training set is built on top of the entire corpus of the NEEL 2014 Challenge. We have further extended it for typing the entities and adding the NIL references.</p>
+                                    <p>The dataset comprises tweets extracted from a collection of over 18 million tweets. The dataset includes tweets provided by the Redites project (http://demeter.inf.ed.ac.uk/redites/) covering event-annotated tweets It extends over multiple noteworthy events from 2011, 2013, and 2014 including the death of Amy Winhehouse, the London Riots, the Oslo bombing and the Westgate Shopping Mall shootout. Since the task of this challenge is to automatically recognise and link entities, we have built our dataset considering both event and non-event tweets. While event tweets are more likely to contain entities, non-event tweets enable us to evaluate the performance of the system in avoiding false positives in the entity extraction phase. The training set is built on top of the entire corpus of the NEEL 2014 Challenge. We have further extended it for typing the entities and adding the NIL references.
+                                    </p>
+<p>
+Following the Twitter TOS we will only provide tweet IDs and annotations for the training set; and tweet IDs for the test set. We will also provide a common framework to mine these datasets from Twitter.  The training set will be released as tsv following the TAC KBP format, where each line consists of the following features:
+</p>
+<p>
+1st: tweet id
+2nd,3rd: start/end offsets expressed as the number of UTF8 characters starting from 0, aka the beginning of the tweet
+4th: link to DBpedia resource or NIL (it may exist different NIL in the dataset. Each NIL may be reused if there are several mentions in the text which express the same entity)
+5th:  score
+6th: type
+</p>
+<p>
+Tokens are separated by TABs. Entity mentions and URIs are listed according to their appearance order in the tweet. We will timely advertise the release of the data sets on the workshop mailing list. Please subscribe to https://groups.google.com/d/forum/microposts2015. More information about dates are available in the NEEL website http://www.scc.lancs.ac.uk/microposts2015/challenge. 
 
-<p>The dataset has been split into training (70%) and testing (30%) sets. Following the Twitter TOS we will only provide tweet IDs and annotations for the training set; and tweet IDs for the test set. We will also provide a common framework to mine these datasets from Twitter.</p>
-
-<p>The training set will be released as tsv file where each line consists of :</p>
-<p>TODO</p>
-<p>Tokens are separated by TABs. Entity mentions and URIs are listed according to their appearance order in the tweet.</p>
- 
-<p>We will timely advertise the release of the data sets on the workshop mailing list. Please subscribe to <a href="https://groups.google.com/d/forum/microposts2015">https://groups.google.com/d/forum/microposts2015</a>. More information about dates are available in the NEEL website <a href="http://www.scc.lancs.ac.uk/microposts2015/challenge">http://www.scc.lancs.ac.uk/microposts2015/challenge</a>. 
 </p>
 
                         </div><!--dataset-->
@@ -160,18 +166,31 @@ We will ask the participants to automatically extract entities (e.g., Obama, Lon
                                     <h4><a name="submission" id="submission"></a> Evaluation &amp; Submission</h4>
                                     
                                     <h5>Evaluation</h5>
-                                    <p>The evaluation consists of two separated stages:</p>
+                                    <p>Participants are required to implement their systems as a publicly accessible web service following a REST based protocol (which will be advertised on the mailing list before the release of the training set) and submit their contending entries (up to 10) to a registry of the NEEL challenge services. Upon receiving the registration of the service, calls to the contending entry will be scheduled in two different time windows, namely D-Time (meant to test the APIs) and T-Time for the final evaluation and metric computations. In the final stage, each participant can submit up to 3 final contending entries. </p>
+<p>
+We will use the metrics proposed by TAC KBP 2014 (https://github.com/wikilinks/neleval/wiki/Evaluation) and in particular we will focus on: 
+</p>
+<p>
 
- <ul> 
- <li> Paper peer review : A community of experts of the domain will judge the quality and applicability of the approaches taken, to provide useful insights on your research;</li>
- <li> Precision and Recall:  F1 (F-measure with beta = 1) will be computed on a gold standard manually created from the test set. The automatically extracted entities and links will be both matched against this ground truth.</li>
- </ul>
-<p>All submissions will be only ranked according to the F1 of each best submission.</p>
-
-<p><span style="color: #f00">TODO</span>What about the computation time?</p>
+[tagging]      strong_typed_mention_match (check entity name boundary and type)
+[linking]       strong_mention_match
+[clustering]  mention_ceaf (KB/NIL detection)
+</p>
+<p>
+To ensure the correctness of the results and avoid any loss we will trigger N number of calls and we will statistically evaluate the metrics.
+</p>
 
   <h5>Submissions</h5>
-<p><span style="color: #f00">TODO</span></p>
+<p>
+A paper of 2 pages describing your approach, how you tuned/tested it using the training split, and your results. All submissions must be in English. All written submissions should be prepared according to the ACM SIG Proceedings Template (see http://www.acm.org/sigs/publications/proceedings-templates), and should include author names and affiliations, and 3-5 author-selected keywords. Where a submission includes additional material submission this should be made as a single, unencrypted zip file that includes a plain text file listing its contents.Submission is via EasyChair, at:  https://www.easychair.org/conferences/?conf=microposts2015.
+</p>
+
+<p>Each submission will receive at least 2 peer reviews.</p>
+
+<p>
+The #Microposts2015 proceedings will be published as a single volume containing all three tracks, via CEUR. The same publication conditions however apply as for other workshop proceedings included in the WWW conference companion: "Any paper published by the ACM, IEEE, etc. which can be properly cited constitutes research which must be considered in judging the novelty of a WWW submission, whether the published paper was in a conference, journal, or workshop. Therefore, any paper previously published as part of a WWW workshop must be referenced and suitably extended with new content to qualify as a new submission to the Research Track at the WWW conference."
+
+</p>
                                     
                                     </div><!--evSub-->
                                     
@@ -179,17 +198,20 @@ We will ask the participants to automatically extract entities (e.g., Obama, Lon
                                 <div class="section" id="dates">
                                     <h4><a name="deadlines" id="deadlines"></a>Deadlines (further detail pending):</h4>
                                     <ul>
-                                        <li>Intent to participate: 20 Jan  2015 (soft - further instructions will be shared on the mailing list )</li>
-<li>Release of training set: 21 Feb 2015</li>
-<li>Release of test set: 24 Mar 2015</li>
-<li>Challenge Submission deadline: 28 Mar 2015 (hard)</li>
+                                        <li>Intent to participate: 20 Jan  2015 (soft - further instructions will be shared on the mailing list)</li>
+<li>Release of the REST API specs: 2 Feb 2015</li>                                        
+<li>Release of training set: 15 Feb 2015</li>
+<li>Registration of contending entries: 2 Mar 2015</li>
+<li>D-Time: 10-15 Mar 2015 (hard)</li>
+<li>T-Time: 20-25 Mar 2015 (hard)</li>
+<li>Paper submission: 28 Mar 2015 (hard)</li>
 <li>Challenge Notification: 21 Apr 2015  (hard)</li>
 <li>Challenge camera-ready deadline: 31 Apr 2015 (hard)</li>
 </ul>
 <ul> 
 <li>Workshop program issued: 22 Apr 2015</li>
 <li>Challenge proceedings to be published via CEUR</li>
-<li>Workshop - 18 May 2015 (Registration open to all)
+<li>Workshop - 18/19 May 2015 (Registration open to all)
 (All deadlines 23:59 Hawaii Time)</li>
 
                                     </ul>
@@ -208,7 +230,18 @@ We will ask the participants to automatically extract entities (e.g., Obama, Lon
 
                                
                                     
-                                    <p><img src="../images/blank_space.png" height=25></p>                                                                                                      
+                                    <p><img src="../images/blank_space.png" height=25></p>  
+                                    
+                                    <div class="section">
+<ul>                                    
+<li>E-mail: microposts2014@easychair.org</li>
+<li>Google group : https://groups.google.com/forum/#!forum/microposts2015</li>
+<li>Twitter hashtag: #microposts2015challenge</li>
+<li>Twitter account: @Microposts2015</li>
+<li>W3C Microposts Community Group: http://www.w3.org/community/microposts</li>
+</ul>
+
+                                    </div>                                                                                                    
                                 
                                  <div class="section" id="challenge_committee">
                                     <h4>Challenge Chairs</h4>
@@ -223,22 +256,30 @@ We will ask the participants to automatically extract entities (e.g., Obama, Lon
                                     <p>&nbsp;</p>
                                     <h4>Evaluation  Committee</h4>
                                     
-                                    Ebrahim Bagheri,	Ryerson University, Canada <br />
-                                    Pierpaolo Basile, University of Bari, Italy <br />
-                                    &#211;scar Corcho, Universidad Polit&#233;cnica de Madrid <br />
-                                    Leon Derczynski, The University of Sheffield, UK <br />
-                                    Guillaume Er&#233;t&#233;o, INRIA, France <br />
-                                    Miriam Fernandez, The Open University, UK <br />
-                                    Andr&#233;s Garc&#237;a-Silva, Universidad Polit&#233;cnica de Madrid <br />
-                                    Anna Lisa Gentile, The University of Sheffield, UK <br />
-                                    Robert J&#228;schke, University of Kassel, Germany <br />
-                                    Diana Maynard,  TheUniversity of Sheffield, UK <br />
-                                    Jos&#233; M. Morales del Castillo, El Colegio de M&#233;xico, Mexico <br />
-                                    Georgios Paltoglou, University of Wolverhampton, UK <br />
-                                    Bernardo Pereira Nunes, PUC-Rio, Brazil <br />
-                                    Daniel Preo&#355;iuc-Pietro, The University of Sheffield, UK <br />
-                                    Irina Temnikova, Bulgarian Academy of Sciences, Bulgaria <br />
-                                    Victoria Uren, Aston University, UK <br />
+Ebrahim Bagheri, Ryerson University, Canada<br />
+Pierpaolo Basile, University of Bari, Italy<br />
+Uldis Bojars, SIOC Project<br />
+Ermir Qeli, Swiss Re, Switzerland<br />
+&#211;scar Corcho, Universidad Polit&#233;cnica de Madrid <br />
+Leon Derczynski, The University of Sheffield, UK<br />
+Guillaume Er&#233;t&#233;o, INRIA, France <br />
+Miriam Fernandez, Knowledge Media Institute, The Open University, UK<br />
+Andr&#233;s Garc&#237;a-Silva, Universidad Polit&#233;cnica de Madrid <br />
+Anna Lisa Gentile, The University of Sheffield, UK<br />
+Robert J&#228;schke, University of Kassel, Germany <br />
+Diana Maynard,  The University of Sheffield, UK<br />
+Jos&#233; M. Morales del Castillo, El Colegio de M&#233;xico, Mexico <br />
+Georgios Paltoglou, University of Wolverhampton, UK<br />
+Bernardo Pereira Nunes, PUC-Rio, Brazil<br />
+Daniel Preo&#355;iuc-Pietro, The University of Sheffield, UK <br />
+Irina Temnikova, Qatar Computing Research Institute, Qatar<br />
+Raphaël Troncy, EURECOM, France<br />
+Mischa Tuffield, PeerIndex<br />
+Victoria Uren, Aston University, UK<br />
+Gregoire Burel, Knowledge Media Institute, The Open University, UK<br />
+
+
+                                    
                                     
                                     <!-- <p><img src="images/blank_space.png" height=35></p> -->
                                     <!-- p>Download the detailed challenge call <a href="cfp_ie_challenge_msm2013.txt">[text]</a> <a href="cfp_ie_challenge_msm2013.pdf">[PDF]</a></p -->
