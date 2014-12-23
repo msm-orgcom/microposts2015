@@ -127,102 +127,99 @@
 
                                 <div class="sectionwithinset" id="introduction">
                                     <h3><a name="introduction" id="introduction"></a>Named Entity rEcognition and Linking (NEEL) Challenge</h3>
-                                    <p>Microposts are a highly popular medium to share facts, opinions or emotions. They are an invaluable wealth of data, ready to be mined for training predictive modellings. Following the success of the last year, we are pleased to announce the NEEL challenge which will be part of  the #Microposts2015 Workshop at the World Wide Web 2015 conference.</p>
+                                    <p>Microposts are a highly popular medium for sharing facts, opinions and/or emotions. Microposts comprise an invaluable wealth of data, ready to be mined for training predictive models. Following the success of the challenge in 2013/14, we are pleased to announce the NEEL challenge which will be part of  the #Microposts2015 Workshop at the World Wide Web 2015 conference.</p>
 
-<p>The overall task of the challenge is to automatically recognise entities and their types from English microposts, and to link them to the corresponding English DBpedia 2014 resources (if the linkage exists). Participants will have to automatically extract expressions that are formed by discrete (and typically short) sequences of words (e.g., Obama, London, Rakuten) and recognise their types (e.g., Person, Location, Organisation) from a collection of microposts. As linking stage we aim to disambiguate the spotted entity to the corresponding DBpedia resource, or to a NIL reference if the spotted named entity does not match any resource in DBpedia. This year challenge will also evaluate the end-to-end performance of the system by measuring the computation time for analyzing the corpus using the submitted algorithms. </p>
+                                    <p>The challenge task is to automatically recognise entities and their types from English Microposts, and link them to the corresponding English DBpedia 2014 resources (where a linkage exists). Participants will have to automatically extract expressions that are formed by discrete (and typically short) sequences of words (e.g., "Barack Obama", London, Rakuten) and recognise their types (e.g., Person, Location, Organisation) from a collection of Microposts. At the linking stage participants must disambiguate the named entity spotted to the corresponding DBpedia resource, or to a NIL reference if it does not match any resource in DBpedia. The 2015 challenge will also evaluate the end-to-end performance of the system, by measuring the computation time for analysing the corpus using each algorithm submitted.</p>
 
-<p>We welcome and hope participants from NEEL, TREC, TAC, ERD shared tasks to participate in this year challenge.
-
-</p>
+                                    <p>We welcome and aim to attract participants from the previous Microposts workshop challenges, as well as <a href="http://trec.nist.gov/" target="_blank">TREC</a>, <a href="http://www.nist.gov/tac/2014/KBP" target="_blank">TAC KBP</a>, <a href="http://web-ngram.research.microsoft.com/ERD2014" target="_blank">ERD</a> shared tasks to the #Microposts2015 NEEL challenge.</p>
 
 									<h4>Award Sponsor:
                                          <img src="../images/blank_space.png" width=15 height=45>
                                          <a href="http://spaziodati.eu" target="_blank" style="border:0px"><img src="../images/spaziodati_logo.png" width="125px" alt="SpazioDati"/></a>
                                      </h4>
-						</div><!--sectionwithinset-->
-						
-						<div class="section" id="dataset">						
+                                </div><!--sectionwithinset-->
+                                
+                                <div class="section" id="dataset">						
                                     <h4><a name="dataset" id="dataset"></a>Dataset</h4>
-                                    <p>The dataset comprises tweets extracted from a collection of over 18 million tweets. The dataset includes event-annotated tweets provided by the  <a href="http://demeter.inf.ed.ac.uk/redites/">Redites project</a> covering multiple noteworthy events from 2011, 2013  (including the death of Amy Winhehouse, the London Riots, the Oslo bombing and the Westgate Shopping Mall shootout) and tweets extracted from the Twitter firehose from 2014. Since the task of this challenge is to automatically recognise and link entities, we have built our dataset considering both event and non-event tweets. While event tweets are more likely to contain entities, non-event tweets enable us to evaluate the performance of the system in avoiding false positives in the entity extraction phase. The training set is built on top of the entire corpus of the NEEL 2014 Challenge. We have further extended it for typing the entities and adding the NIL references.
+                                    <p>The dataset comprises tweets extracted from a collection of over 18 million tweets. They include event-annotated tweets provided by the <a href="http://gow.epsrc.ac.uk/NGBOViewGrant.aspx?GrantRef=EP/L010690/1" target="_blank">Redites project</a>, covering multiple noteworthy events from 2011 and 2013  (including the death of Amy Winhehouse, the London Riots, the Oslo bombing and the Westgate Shopping Mall shootout), and tweets extracted from the Twitter firehose in 2014. Since the challenge task is to automatically recognise and link entities, we have built our dataset considering both event and non-event tweets. While event tweets are more likely to contain entities, non-event tweets enable us to evaluate the performance of the system in avoiding false positives in the entity extraction phase. The training set is built on top of the entire corpus of the <a href="http://www.scc.lancs.ac.uk/microposts2014/challenge">NEEL 2014 Challenge</a>. We have further extended it for typing the entities and adding NIL references.
+                                    </p>
+
+                                    <p>Following the <a href="https://twitter.com/tos" target="_blank">Twitter ToS</a> we will only provide tweet IDs and annotations for the training set; and tweet IDs for the test set. We will also provide a common framework for mining these datasets from Twitter. The training set will be released as tsv, following the TAC KBP format, where each line consists of the following features:</p>
+                                    
+                                    <dl>
+                                        <dt></dt>
+                                        <dd><b>1st</b>: tweet id</dd>
+                                        <dd><b>2nd, 3rd</b>: start/end offsets expressed as the number of UTF8 characters starting from 0, aka the beginning of the tweet</dd>
+                                        <dd><b>4th</b>: link to DBpedia resource or NIL (there may be different NIL references in the corpus. Each NIL may be reused if there are multiple mentions in the text which represent the same entity)</dd>
+                                        <dd><b>5th</b>: salience (confidence score)</dd>
+                                        <dd><b>6th</b>: type</dd>
+                                    </dl>
+                                    
+                                    <p>Tokens are separated by TABs. Entity mentions and URIs are listed according to their position in the tweet. We will notify release of the data set from <a href="https://twitter.com/Microposts2015">&#64;Microposts2015</a>, here and via the mailing list &ndash; subscribe to the <a href="https://groups.google.com/d/forum/microposts2015">#Microposts2015 Google group</a>.
 
                                     </p>
-<p>
-Following the Twitter TOS we will only provide tweet IDs and annotations for the training set; and tweet IDs for the test set. We will also provide a common framework to mine these datasets from Twitter.  The training set will be released as tsv following the TAC KBP format, where each line consists of the following features:
-</p>
-<p>
-1st: tweet id</br>
-2nd,3rd: start/end offsets expressed as the number of UTF8 characters starting from 0, aka the beginning of the tweet</br>
-4th: link to DBpedia resource or NIL (it may exist different NIL in the dataset. Each NIL may be reused if there are several mentions in the text which express the same entity)</br>
-5th:  score</br>
-6th: type</br>
-</p>
-<p>
-Tokens are separated by TABs. Entity mentions and URIs are listed according to their appearance order in the tweet. We will timely advertise the release of the data sets on the workshop mailing list. Please subscribe to the  <a href="https://groups.google.com/d/forum/microposts2015">Microposts2015 Google group</a>. 
 
-</p>
-
-                        </div><!--dataset-->
+                                </div><!--dataset-->
                         
-                              <div class="section" id="submission">
+                                <div class="section" id="submission">
                                     <h4><a name="submission" id="submission"></a> Evaluation &amp; Submission</h4>
                                     
                                     <h5>Evaluation</h5>
-                                    <p>Participants are required to implement their systems as a publicly accessible web service following a REST based protocol (which will be advertised on the mailing list before the release of the training set) and submit their contending entries (up to 10) to a registry of the NEEL challenge services. Upon receiving the registration of the service, calls to the contending entry will be scheduled in two different time windows, namely D-Time (meant to test the APIs) and T-Time for the final evaluation and metric computations. In the final stage, each participant can submit up to 3 final contending entries. </p>
-<p>
-We will use the metrics proposed by <a href="https://github.com/wikilinks/neleval/wiki/Evaluation">TAC KBP 2014</a> and in particular we will focus on: 
-</p>
-<p>
-
-[tagging]      strong_typed_mention_match (check entity name boundary and type)</br>
-[linking]       strong_mention_match</br>
-[clustering]  mention_ceaf (KB/NIL detection)</br>
-</p>
-<p>
-To ensure the correctness of the results and avoid any loss we will trigger N number of calls and we will statistically evaluate the metrics.
-</p>
-
-  <h5>Submissions</h5>
-<p>
-A paper of 2 pages describing your approach, how you tuned/tested it using the training split, and your results. All submissions must be in English. All written submissions should be prepared according to the <a href="http://www.acm.org/sigs/publications/proceedings-template">ACM SIG Proceedings Template</a>, and should include author names and affiliations, and 3-5 author-selected keywords. Where a submission includes additional material submission this should be made as a single, unencrypted zip file that includes a plain text file listing its contents.Submission is via EasyChair, at:  <a href="https://www.easychair.org/conferences/?conf=microposts2015">https://www.easychair.org/conferences/?conf=microposts2015</a>.
-</p>
-
-<p>Each submission will receive at least 2 peer reviews.</p>
-
-<p>
-The #Microposts2015 proceedings will be published as a single volume containing all three tracks, via CEUR. The same publication conditions however apply as for other workshop proceedings included in the WWW conference companion: "Any paper published by the ACM, IEEE, etc. which can be properly cited constitutes research which must be considered in judging the novelty of a WWW submission, whether the published paper was in a conference, journal, or workshop. Therefore, any paper previously published as part of a WWW workshop must be referenced and suitably extended with new content to qualify as a new submission to the Research Track at the WWW conference."
-
-</p>
+                                    <p>Participants are required to implement their systems as a publicly accessible web service following a REST-based protocol, which will be publicised before the release of the training set, and submit (up to 10) contending entries to the registry of the NEEL challenge services. Upon receiving the registration of the service, calls to each entry will be scheduled in two different time windows:
                                     
-                                    </div><!--evSub-->
+                                    <dl>
+                                        <dt></dt>
+                                        <dd><b>D-Time</b> to test the APIs;</dd>
+                                        <dd><b>T-Time</b> for the final evaluation and metric computations.</dd>
+                                    </dl>
+
+                                        <br />In the final stage, each participant may submit up to 3 final contending entries.
+                                    </p>
+
+                                    <p>We will use the metrics proposed by <a href="https://github.com/wikilinks/neleval/wiki/Evaluation" target="_blank">TAC KBP 2014</a> and in particular we will focus on:</p>
                                     
+
+                                    <dl>
+                                        <dt></dt>
+                                        <dd><b>[tagging]</b>&nbsp;&nbsp;&nbsp;strong_typed_mention_match (check entity name boundary and type)</dd>
+                                        <dd><b>[linking]</b>&nbsp;&nbsp;&nbsp;strong_mention_match</dd>
+                                        <dd><b>[clustering]</b>&nbsp;&nbsp;&nbsp;mention_ceaf (KB/NIL detection)</dd>
+                                    </dl>
+
+                                    <p>To ensure the correctness of the results and avoid any loss we will trigger N number of calls and statistically evaluate the metrics.</p>
+
+                                    <p><img src="../images/blank_space.png" height=5></p>
+                                    <h5>Accompanying written submission</h5>
+                                    <p>Description of approach followed &ndash; 2 page extended abstract. Further detail on the <a href="../submission_info.html">submissions</a> page</p>
+                                    
+                                    <p><img src="../images/blank_space.png" height=5></p>
+                                    <p><a href="#top" class="style1">back to top</a> </p>
+                                </div><!--evSub-->
+                                
                                     
                                 <div class="section" id="dates">
-                                    <h4><a name="deadlines" id="deadlines"></a>Deadlines (further details pending):</h4>
+                                    <h4><a name="deadlines" id="deadlines"></a>Deadlines</h4>
                                     <ul>
-                                        <li>Intent to participate: 20 Jan  2015 (soft - further instructions will be shared on the mailing list)</li>
-<li>Release of the REST API specs: 2 Feb 2015</li>                                        
-<li>Release of training set: 15 Feb 2015</li>
-<li>Registration of contending entries: 2 Mar 2015</li>
-<li>D-Time: 10-15 Mar 2015 (hard)</li>
-<li>T-Time: 20-25 Mar 2015 (hard)</li>
-<li>Paper submission: 28 Mar 2015 (hard)</li>
-<li>Challenge Notification: 21 Apr 2015  (hard)</li>
-<li>Challenge camera-ready deadline: 31 Apr 2015 (hard)</li>
-</ul>
-<ul> 
-<li>Workshop program issued: 22 Apr 2015</li>
-<li>Challenge proceedings to be published via CEUR</li>
-<li>Workshop - 18/19 May 2015 (Registration open to all)
-(All deadlines 23:59 Hawaii Time)</li>
-
+                                        <li><b>Intent to participate: <span style="color: #f00">*20 Jan 2015*</span></b></li>
+                                        <li>Release of the REST API specs: 2 Feb 2015</li>
+                                        <li>Release of training set: 15 Feb 2015</li>
+                                        <br />
+                                        <li>Registration of contending entries: 2 Mar 2015</li>
+                                        <li>D-Time: 10-15 Mar 2015</li>
+                                        <li>T-Time: 20-25 Mar 2015 </li>
+                                        <br />
+                                        <li>Written submission: 28 Mar 2015</li>
+                                        <li>Acceptance notification: 21 Apr 2015</li>
+                                        <li>Camera-ready: 30 Apr 2015</li>
                                     </ul>
+                                    <p><img src="../images/blank_space.png" height=5></p>
                                   </div>  <!--dates-->
                                   
                                  <div class="section" id="prize">
                                     
                                     <h4>Prize</h4>
                                     <p>
-                                    A prize of &#8364;1500, generously sponsored by <a href="http://spaziodati.eu" target="_blank">SpazioDati</a>, will be awarded to the highest ranking submission. SpazioDati is an Italian startup focused on text analytics and big data. One of SpazioDati's key components is <a href="https://dandelion.eu/products/datatxt"><b><i>dataTXT</i></b></a>, a text-analytics engine available on SpazioDati's' API platform, Dandelion. The <b><i>dataTXT</i></b> named-entity extraction system has been proven to be very effective and efficient on short and fragmented texts, like Microposts. By teaming up with SpazioDati to make the challenge possible, the &#35;Microposts workshop organisers wish to highlight new entity extraction methods and algorithms to pursue in such challenging scenarios.
+                                    A prize of &#8364;1500, generously sponsored by <a href="http://spaziodati.eu" target="_blank">SpazioDati</a>, will be awarded to the highest ranking submission. SpazioDati is an Italian startup focused on text analytics and big data. One of SpazioDati's key components is <a href="https://dandelion.eu/products/datatxt"><b><i>dataTXT</i></b></a>, a text-analytics engine available on SpazioDati's API platform, Dandelion. The <b><i>dataTXT</i></b> named-entity extraction system has been proven to be very effective and efficient on short and fragmented texts, like Microposts. By teaming up with SpazioDati to make the challenge possible, the &#35;Microposts workshop organisers wish to highlight new entity extraction methods and algorithms to pursue in such challenging scenarios.
                                     </p>
                                                                                                      
                                 </div><!--prize-->                                                                                                
@@ -230,7 +227,7 @@ The #Microposts2015 proceedings will be published as a single volume containing 
                                  <div class="section" id="challenge_committee">
                                     <h4>Challenge Chairs</h4>
                                     <p><a href="http://people.kmi.open.ac.uk/cano" target="_blank">A. Elizabeth Cano</a>, Knowledge Media Institute, The Open University, UK</p>
-                                    <p><a href="http://www.di.unito.it/~rizzo" target="_blank">Giuseppe Rizzo</a>,  Universit&agrave; di Torino, Italy</p>
+                                    <p><a href="http://www.di.unito.it/~rizzo" target="_blank">Giuseppe Rizzo</a>,  EURECOM, France</p>
                                     
                                     <p>&nbsp;</p>
                                     <h4>Challenge Dataset Chair</h4>
@@ -240,43 +237,33 @@ The #Microposts2015 proceedings will be published as a single volume containing 
                                     <p>&nbsp;</p>
                                     <h4>Evaluation  Committee</h4>
  
-Gabriele Antonelli, SpazioDati, Italy </br>                                   
-Ebrahim Bagheri, Ryerson University, Canada<br />
-Pierpaolo Basile, University of Bari, Italy<br />
-Leon Derczynski, The University of Sheffield, UK<br />
-Milan Dojchinovski, Czech Technical University, Czech Republic </br>
-Guillaume Er&#233;t&#233;o, INRIA, France <br />
-Andr&#233;s Garc&#237;a-Silva, Universidad Polit&#233;cnica de Madrid <br />
-Anna Lisa Gentile, The University of Sheffield, UK<br />
-Miguel Martinez-Alvarez, Signal, UK	</br>
-Jos&#233; M. Morales del Castillo, El Colegio de M&#233;xico, Mexico <br />
-Georgios Paltoglou, University of Wolverhampton, UK<br />
-Bernardo Pereira Nunes, PUC-Rio, Brazil<br />
-Daniel Preo&#355;iuc-Pietro, The University of Sheffield, UK <br />
-Giles Reger, The University of Manchester, UK</br>
-Irina Temnikova, Qatar Computing Research Institute, Qatar<br />
-Raphaël Troncy, EURECOM, France<br />
-Victoria Uren, Aston University, UK<br />
+                                        Gabriele Antonelli, SpazioDati, Italy </br>
+                                        Ebrahim Bagheri, Ryerson University, Canada<br />
+                                        Pierpaolo Basile, University of Bari, Italy<br />
+                                        Gr&#233;goire Burel, KMi, Open University, UK<br />
+                                        Leon Derczynski, The University of Sheffield, UK<br />
+                                        Milan Dojchinovski, Czech Technical University, Czech Republic </br>
+                                        Guillaume Er&#233;t&#233;o, Vigiglobe, France <br />
+                                        Andr&#233;s Garc&#237;a-Silva, Universidad Polit&#233;cnica de Madrid <br />
+                                        Anna Lisa Gentile, The University of Sheffield, UK<br />
+                                        Miguel Martinez-Alvarez, Signal, UK	</br>
+                                        Jos&#233; M. Morales del Castillo, El Colegio de M&#233;xico, Mexico <br />
+                                        Georgios Paltoglou, University of Wolverhampton, UK<br />
+                                        Bernardo Pereira Nunes, PUC-Rio, Brazil<br />
+                                        Daniel Preo&#355;iuc-Pietro, The University of Sheffield, UK <br />
+                                        Ermir Qeli, Swiss Re, Switzerland </br>
+                                        Giles Reger, The University of Manchester, UK </br>
+                                        Irina Temnikova, Qatar Computing Research Institute, Qatar<br />
+                                        Rapha&#235;l Troncy, EURECOM, France <br />
+                                        Victoria Uren, Aston University, UK<br />
 
-<!--
-Ermir Qeli, Swiss Re, Switzerland<br />
-Uldis Bojars, SIOC Project<br />
-&#211;scar Corcho, Universidad Polit&#233;cnica de Madrid <br />
-Miriam Fernandez, Knowledge Media Institute, The Open University, UK<br />
-Robert J&#228;schke, University of Kassel, Germany <br />
-Diana Maynard,  The University of Sheffield, UK<br />
-Jos&#233; M. Morales del Castillo, El Colegio de M&#233;xico, Mexico <br />
-Georgios Paltoglou, University of Wolverhampton, UK<br />
-Mischa Tuffield, PeerIndex<br />
-Gregoire Burel, Knowledge Media Institute, The Open University, UK<br />
--->
 
-                                                                      
-                                    <p>&nbsp;<br /><a href="#top" class="style1">back to top</a> </p>                                    
-                                     <p>&nbsp;</p>
-                                    
-                                    <h4>Contact</h4>
-                                    <p><a href="../contact.html">Contact</a> workshop organisers or challenge chair</p>
+                                   <p><img src="../images/blank_space.png" height=25></p>
+                                   <p>Download the <a href="http://bit.ly/1E2yHf2"> CfP</a> </p>
+                                   <p><a href="../contact.html">Contact</a> workshop organisers or challenge chairs</p>
+                           
+                                    <p><img src="../images/blank_space.png" height=5></p>
+                                    <a href="#top" class="style1">back to top</a> </p>
                                     
                                 </div>                                                              
                                 
