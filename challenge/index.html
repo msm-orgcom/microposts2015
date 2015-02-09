@@ -151,8 +151,8 @@
                                         <dd><b>1st</b>: tweet id</dd>
                                         <dd><b>2nd, 3rd</b>: start/end offsets expressed as the number of UTF8 characters starting from 0, aka the beginning of the tweet</dd>
                                         <dd><b>4th</b>: link to DBpedia resource or NIL (there may be different NIL references in the corpus. Each NIL may be reused if there are multiple mentions in the text which represent the same entity)</dd>
-                                        <dd><b>5th</b>: salience (confidence score)</dd>
-                                        <dd><b>6th</b>: type</dd>
+                                        <!--dd><b>5th</b>: salience (confidence score)</dd-->
+                                        <dd><b>5th</b>: type</dd>
                                     </dl>
                                     
                                     <p>Tokens are separated by TABs. Entity mentions and URIs are listed according to their position in the tweet. We will notify release of the data set from <a href="https://twitter.com/Microposts2015">&#64;Microposts2015</a>, here and via the mailing list &ndash; subscribe to the <a href="https://groups.google.com/d/forum/microposts2015">#Microposts2015 Google group</a>.
@@ -184,6 +184,11 @@
                                         <dd><b>[tagging]</b>&nbsp;&nbsp;&nbsp;strong_typed_mention_match (check entity name boundary and type)</dd>
                                         <dd><b>[linking]</b>&nbsp;&nbsp;&nbsp;strong_link_match</dd>
                                         <dd><b>[clustering]</b>&nbsp;&nbsp;&nbsp;mention_ceaf (KB/NIL detection)</dd>
+                                    </dl>
+                                    
+                                    Additionally, an another metric will be considered to estimate the computational time:
+                                    
+                                    <dl>    
                                         <dd><b>[latency*]</b>&nbsp;&nbsp;&nbsp;it estimates the computational time</dd>
                                     </dl>
 
